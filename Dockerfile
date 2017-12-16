@@ -1,5 +1,5 @@
-FROM maven:3.5.2-jdk-8-slim
+FROM maven:3.5.2-jdk-8
 WORKDIR /app
 COPY . /app
-RUN mvn install -DskipTests=true
+RUN mvn package
 CMD ["java", "-jar", "/app/target/boot2-metrics.jar"]
